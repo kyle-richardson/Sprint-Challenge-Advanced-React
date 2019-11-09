@@ -13,7 +13,7 @@ const Header = ()=> {
             <h1>Women's World Cup players ranked by search interest from Google Trends, June-July 2019, worldwide </h1>
             <div className="toggle">
                 <Switch className="toggle-switch" onChange={toggleMode} checked={darkMode || false}/>
-                <div style={{fontSize: '1rem'}}>Dark mode</div>
+                <div style={{fontSize: '.7rem'}}>Dark mode</div>
             </div>
         </div>
     )

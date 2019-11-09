@@ -26,6 +26,9 @@ body {
   justify-content: space-between;
   margin: 20px auto;
 }
+.toggle {
+  margin-top: 30px;
+}
 
 .graph-container {
   display: flex;

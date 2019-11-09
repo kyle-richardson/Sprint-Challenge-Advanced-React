@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from "axios"
 import PlayerList from "./components/PlayerList"
 import Header from "./components/Header"
+import PlayerGraph from "./components/PlayerGraph"
 // country: "United States"
 // id: 0
 // name: "Alex Morgan"
@@ -9,7 +10,8 @@ import Header from "./components/Header"
 
 class App extends Component {
   state= {
-    playerList:[]
+    playerList:[],
+    countryList: []
   }
   componentDidMount=()=> {
     axios
@@ -19,6 +21,22 @@ class App extends Component {
           playerList: res.data
         })
       })
+      .then(()=>{
+        const countries = [...new Set(this.state.playerList.map(ele=>ele.country))]
+
+        const countryData = countries.map(country=> {
+          return {
+            country: `${country}`,
+            players: this.state.playerList.filter(player=> player.country===country).length
+          }
+        })
+        this.setState({
+          countryList: countryData
+        })
+      })
+      // .then(()=> {
+      //   console.log(this.state)
+      // })
       .catch(err => console.log(err))
   }
   render() {
@@ -26,6 +44,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <PlayerList playerList={this.state.playerList}/>
+        <PlayerGraph countryList = {this.state.countryList}/>
       </div>
     )
   }

@@ -4,13 +4,14 @@ import Player from "./Player"
 const PlayerList = ({playerList}) => {
     return (
         <div className="player-list-container">
-            {playerList.map(player=>{
+            {playerList.map((player,id)=>{
                 return(
                     <div key={player.id}>
-                        <Player player={player} />
+                        {id<5 && <Player player={player} />}
                     </div>
                 )
             })}
+            
         </div> 
     )
 }

@@ -5,7 +5,7 @@ const Player = props => {
         <div className="player-container">
             <p>Name: {props.player.name}</p>
             <p>Country: {props.player.country}</p>
-            <p>Searched:{props.player.searches}</p>
+            <p>Searched: {props.player.searches}</p>
         </div>
     )
 }

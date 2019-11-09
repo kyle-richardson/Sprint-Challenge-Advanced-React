@@ -4,13 +4,17 @@ import Player from "./Player"
 const PlayerList = ({playerList}) => {
     return (
         <div className="player-list-container">
-            {playerList.map((player,id)=>{
-                return(
-                    <div key={player.id}>
-                        {id<5 && <Player player={player} />}
-                    </div>
-                )
-            })}
+            <h2>Top 5 players searched</h2>
+            <div className="player-list">
+                {playerList.map((player,id)=>{
+                    return(
+                        <div key={player.id}>
+                            {id<5 && <Player player={player} />}
+                        </div>
+                    )
+                })}
+            </div>
+            
             
         </div> 
     )

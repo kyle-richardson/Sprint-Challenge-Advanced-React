@@ -5,12 +5,13 @@
   "dependencies": {
     "@testing-library/jest-dom": "^4.1.0",
     "@testing-library/react": "^9.3.0",
+    "chart.js": "^2.9.2",
     "react": "^16.10.1",
+    "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.10.1",
     "react-scripts": "3.1.2",
     "react-switch": "^5.0.1",
-    "react-testing-library": "^8.0.1",
-    "react-vis": "^1.11.7"
+    "react-testing-library": "^8.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

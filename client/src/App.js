@@ -30,8 +30,9 @@ class App extends Component {
             players: this.state.playerList.filter(player=> player.country===country).length
           }
         })
+        const dataSorted = countryData.sort((a,b)=>b.players-a.players)
         this.setState({
-          countryList: countryData
+          countryList: dataSorted
         })
       })
       // .then(()=> {
@@ -43,8 +44,8 @@ class App extends Component {
     return(
       <div className="App">
         <Header />
-        <PlayerList playerList={this.state.playerList}/>
         <PlayerGraph countryList = {this.state.countryList}/>
+        <PlayerList playerList={this.state.playerList}/>
       </div>
     )
   }

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from "axios"
 import PlayerList from "./components/PlayerList"
+import Header from "./components/Header"
 // country: "United States"
 // id: 0
 // name: "Alex Morgan"
@@ -14,7 +15,6 @@ class App extends Component {
     axios
       .get('http://localhost:5000/api/players')
       .then(res=> {
-        console.log(res.data)
         this.setState({
           playerList: res.data
         })
@@ -24,6 +24,7 @@ class App extends Component {
   render() {
     return(
       <div className="App">
+        <Header />
         <PlayerList playerList={this.state.playerList}/>
       </div>
     )
